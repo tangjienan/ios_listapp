@@ -8,6 +8,9 @@
 
 import UIKit
 
-class listObject: NSObject {
-
+class listObject: NSObject,Codable{
+    var time : String?
+    var amount : String?
+    var shortDetail : String?
+    var longDetail : String?
 }

@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import FoldingCell
 
 class newCell: FoldingCell {
-
+   
+    @IBOutlet weak var amount: UILabel!
+    
+    @IBOutlet weak var shortDes: UILabel!
+    
+    @IBOutlet weak var time: UILabel!
+    
     override func awakeFromNib() {
+       
+        foregroundView.layer.cornerRadius = 10
+        foregroundView.layer.masksToBounds = true
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func animationDuration(_ itemIndex: NSInteger, type: FoldingCell.AnimationType) -> TimeInterval {
+        let durations = [0.26, 0.2, 0.2]
+        return durations[itemIndex]
     }
-
+    
 }
